@@ -7,7 +7,7 @@
 library(tidyverse)
 library(lubridate)
 
-load(file = "Utforsking/data/full_dataframe.rda")
+load(file = "data/full_dataframe.rda")
 
 # The reduced dataframe will merge cols that are inconsistent across dataframes
 reduced_df <- full_df |> 

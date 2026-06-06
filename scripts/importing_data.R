@@ -16,7 +16,7 @@ loading_rda <- function(file){
   as.list(e) 
 }
 
-folder <- "Utforsking/raw_data"
+folder <- "data/raw_data"
 files <- list.files(folder, pattern = ".rda$")
 
 data_files <- Map(loading_rda, file.path(folder, files))
