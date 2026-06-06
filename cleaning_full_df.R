@@ -101,3 +101,5 @@ data_plotgonad <- ggplot(data, aes(
 )) +
   geom_histogram(binwidth = 0.05) +
   scale_x_continuous(limits = c(1,6))
+
+print("testingtesting")
