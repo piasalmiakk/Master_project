@@ -34,16 +34,17 @@ reduced_df <- full_df |>
                       "1" = "F",
                       "2" = "M")) |> 
   # Weight 
+  #df from master was in kg, while the others were in grams
   mutate(Weight = coalesce((individualweight*1000), IndividualRoundWeight)) |> 
   # Length 
-  mutate(Length = as.numeric(length*100)) |> 
+  mutate(Length = as.numeric(length*100)) |> #converting from m to cm
   # MissionTypeName
   #consider making Survey into Forskningsfartøy
   mutate(MissionTypeName = coalesce(missiontypename, Survey)) |> 
   # Gonadweight 
-  mutate(Gonadweight = gonadweight*1000) |> 
+  mutate(Gonadweight = gonadweight*1000) |> #converting from kg to grams
   # Liverweight 
-  mutate(Liverweight = liverweight*1000) |> 
+  mutate(Liverweight = liverweight*1000) |> #converting from kg to grams
   # GSI
   mutate(GSI = (gonadweight/Weight)*100) |> 
   select(
